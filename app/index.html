@@ -1,49 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contact Form</title>
-    <link rel="icon" type="image/x-icon" href="../assets/images/favicon-32x32.png">
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="../assets/images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://fonts.google.com/specimen/Karla" />
+  </head>
+  <body>
     <div class="container">
-        <h3>Contact Us</h3>
-        <div class="names-container">
-            <div class="first-name">
-                <p>First name *</p>
-                <input type="text">
-            </div>
-            <div class="last-name">
-                <p>Last name *</p>
-                <input type="text">
-            </div>
+      <h2>Contact Us</h2>
+      <div class="names-container">
+        <div class="first-name">
+          <p>First name *</p>
+          <input type="text" class="input-css"/>
         </div>
-        <div class="email-container">
-            <p>Email adress *</p>
-            <input type="email">
+        <div class="last-name">
+          <p>Last name *</p>
+          <input type="text"  class="input-css"/>
         </div>
-        <div class="query-container">
-            <p>Query Type *</p>
-            <div class="general">
-                <input type="radio" name="query" id="general-query">General Query
-            </div>
-            <div class="support">
-                <input type="radio" name="query" id="support">Support Request
-            </div>
+      </div>
+      <div class="email-container">
+        <p>Email adress *</p>
+        <input type="email" class="input-css"/>
+      </div>
+      <div class="query-container">
+        <p>Query Type *</p>
+        <div class="query">
+          <div class="general">
+            <label for="general-query">
+              <input type="radio" name="query" id="general-query"  />General
+              Query
+            </label>
+          </div>
+          <div class="support">
+            <label for="support-query">
+              <input type="radio" name="query" id="support-query" />Support Request
+            </label>
+          </div>
         </div>
-        <div class="message-container">
-            <p>Message *</p>
-            <input type="text">
-        </div>
-        <div class="button">
-            <input type="checkbox">I consent to get contacted by the team
-        </div>
-        <div class="submit-btn">
-            <button class="submit">Submit</button>
-        </div>
+      </div>
+      <div class="message-container">
+        <p>Message *</p>
+        <textarea name="message" id="input-css"></textarea>
+      </div>
+      <div class="button">
+          <input type="checkbox" id="consent" />
+          <label for="consent">I consent to get contacted by the team</label>
+      </div>
+      <div class="submit-btn">
+        <button class="submit">Submit</button>
+      </div>
     </div>
     <script src="script.js"></script>
-</body>
+  </body>
 </html>

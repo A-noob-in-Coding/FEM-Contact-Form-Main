@@ -1,0 +1,183 @@
+:root {
+  --GreenLight: hsl(148, 38%, 91%);
+  --GreenMedium: hsl(169, 82%, 27%);
+  --Red: hsl(0, 66%, 54%);
+  --White: hsl(0, 0%, 100%);
+  --GreyMedium: hsl(186, 15%, 59%);
+  --GreyDarker: hsl(187, 24%, 22%);
+  --FontSizeLabel: 16px;
+  --FontWeightLight: 400;
+  --FontWeightBold: 700;
+  --InputBoxSize: 30px;
+}
+
+@font-face {
+    font-family: KarlaBold;
+    src: url(../assets/fonts/static/Karla-Bold.ttf);
+}
+
+@font-face {
+    font-family: KarlaNormal;
+    src: url(../assets/fonts/static/Karla-Regular.ttf);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--GreenLight);
+  font-family: KarlaNormal;
+}
+.container
+{
+
+    width: 55%;
+    padding: 2rem;
+    background-color: var(--White);
+    border: 1px solid var(--White);
+    border-radius: 2%;
+}
+
+.container h2
+{
+    font-weight: var(--FontWeightBold);
+}
+
+.container .names-container
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    gap: 1rem;
+}
+
+.container .names-container .first-name,
+.container .names-container .last-name
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.5rem;
+    width: 100%;
+}
+
+.container .names-container .first-name input,
+.container .names-container .last-name input
+{
+    border: 1.5px solid var(--GreyMedium);
+    border-radius: 4px;
+    height: var(--InputBoxSize);
+}
+
+.container .email-container
+{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.container .email-container input
+{
+    border: 1.5px solid var(--GreyMedium);
+    border-radius: 4px;
+    height: var(--InputBoxSize);
+}
+
+.container .query-container
+{
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.container .query-container .query
+{
+    margin: 0rem 0rem 0rem 0rem;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(2,1fr);
+}
+
+.container .query-container .query div
+{
+    border: 1.5px solid var(--GreyMedium);
+    border-radius: 4px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    height: var(--InputBoxSize);
+    padding: 1rem;
+}
+
+.container .query-container .query input[type = "radio"]
+{
+    vertical-align: middle;
+    margin-bottom: 3px;
+    margin-right: 8px;
+}
+
+.container .message-container 
+{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.container .message-container textarea
+{
+    font-family: KarlaNormal;
+    border: 1.5px solid var(--GreyMedium);
+    border-radius: 4px;
+    width: 100%;
+    height: 70px;
+    text-align:left;
+    padding: 0.5rem;
+}
+
+.container .button
+{
+    margin: 2rem 0rem 2rem 0rem;
+}
+
+.container .button input
+{
+    margin-right: 8px;
+    vertical-align: middle;
+    background-color: blue;
+    margin-bottom: 3px;
+}
+
+.container .submit-btn
+{
+    margin-top: 1rem;
+}
+
+.container .submit-btn button
+{
+    background-color: var(--GreenMedium);
+    height: 40px;
+    width: 100%;
+    color: var(--White);
+    border: 1.5px transparent;
+    border-radius: 4px;
+}
+
+.input-css
+{
+    text-wrap: nowrap;
+    text-align: left;
+    padding: 0.5rem;
+    line-height: normal;
+}
