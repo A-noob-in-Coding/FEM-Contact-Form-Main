@@ -1,14 +1,18 @@
+/*
+TODO:
+apply the boder change property when text is written in the text box
+*/
 :root {
-  --GreenLight: hsl(148, 38%, 91%);
-  --GreenMedium: hsl(169, 82%, 27%);
-  --Red: hsl(0, 66%, 54%);
-  --White: hsl(0, 0%, 100%);
-  --GreyMedium: hsl(186, 15%, 59%);
-  --GreyDarker: hsl(187, 24%, 22%);
-  --FontSizeLabel: 16px;
-  --FontWeightLight: 400;
-  --FontWeightBold: 700;
-  --InputBoxSize: 30px;
+    --GreenLight: hsl(148, 38%, 91%);
+    --GreenMedium: hsl(169, 82%, 27%);
+    --Red: hsl(0, 66%, 54%);
+    --White: hsl(0, 0%, 100%);
+    --GreyMedium: hsl(186, 15%, 59%);
+    --GreyDarker: hsl(187, 24%, 22%);
+    --FontSizeLabel: 16px;
+    --FontWeightLight: 400;
+    --FontWeightBold: 700;
+    --InputBoxSize: 30px;
 }
 
 @font-face {
@@ -22,21 +26,21 @@
 }
 
 * {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
 
 body {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: var(--GreenLight);
-  font-family: KarlaNormal;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--GreenLight);
+    font-family: KarlaNormal;
 }
-.container
-{
+
+.container {
 
     width: 55%;
     padding: 2rem;
@@ -45,13 +49,11 @@ body {
     border-radius: 2%;
 }
 
-.container h2
-{
+.container h2 {
     font-weight: var(--FontWeightBold);
 }
 
-.container .names-container
-{
+.container .names-container {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -61,8 +63,7 @@ body {
 }
 
 .container .names-container .first-name,
-.container .names-container .last-name
-{
+.container .names-container .last-name {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -71,45 +72,52 @@ body {
 }
 
 .container .names-container .first-name input,
-.container .names-container .last-name input
-{
+.container .names-container .last-name input {
     border: 1.5px solid var(--GreyMedium);
     border-radius: 4px;
     height: var(--InputBoxSize);
 }
 
-.container .email-container
-{
+
+.container .names-container .first-name input:hover,
+.container .names-container .last-name input:hover {
+    cursor: pointer;
+    border: 2px solid var(--GreenMedium);
+}
+
+.container .email-container {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
 }
 
-.container .email-container input
-{
+.container .email-container input {
     border: 1.5px solid var(--GreyMedium);
     border-radius: 4px;
     height: var(--InputBoxSize);
 }
 
-.container .query-container
-{
+.container .email-container input:hover {
+    cursor: pointer;
+    border: 2px solid var(--GreenMedium);
+}
+
+
+.container .query-container {
     margin-top: 1rem;
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
 }
 
-.container .query-container .query
-{
+.container .query-container .query {
     margin: 0rem 0rem 0rem 0rem;
     display: grid;
     gap: 1rem;
-    grid-template-columns: repeat(2,1fr);
+    grid-template-columns: repeat(2, 1fr);
 }
 
-.container .query-container .query div
-{
+.container .query-container .query div {
     border: 1.5px solid var(--GreyMedium);
     border-radius: 4px;
     display: flex;
@@ -117,67 +125,141 @@ body {
     justify-content: flex-start;
     align-items: center;
     height: var(--InputBoxSize);
-    padding: 1rem;
+    padding: 0rem 1rem 0rem 1rem;
 }
 
-.container .query-container .query input[type = "radio"]
+.container .query-container .query label {
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    
+}
+
+.container .query-container .query .svg-container {
+    display: inline-block;
+    height: 100%;
+    padding: none;
+    padding-top: 0.2rem;
+    vertical-align:middle;
+}
+
+
+/*Hover state for the query sectipn*/
+.container .query-container .query div:hover {
+    display: flex;
+    cursor: pointer;
+    background-color: var(--GreenLight);
+    cursor: pointer;
+}
+
+
+.container .query-container .query input[type="radio"],
+.svg-container .checked-svg
 {
+    display: none;
+}
+
+
+.container .query-container .general input:checked + .svg-container .checked-svg
+{
+    display: inline;
+} 
+
+.container .query-container .general input:checked + .svg-container .unchecked-svg
+{
+    display: none;
+}
+.container .query-container .support input:checked + .svg-container .checked-svg
+{
+    display: inline;
+} 
+.container .query-container .support input:checked + .svg-container .unchecked-svg
+{
+    display: none;
+}
+
+
+.container .button 
+{
+    margin-top: 1rem;
+    cursor: pointer;
+}
+
+.container .button label:hover
+{
+    cursor: pointer;
+}
+
+.container .button .custom-checkbox svg
+{   
+    width: 18px;
+    height: 100%;
     vertical-align: middle;
-    margin-bottom: 3px;
-    margin-right: 8px;
+    
 }
 
-.container .message-container 
+.checked
 {
+    display: none;
+}
+
+.custom-checkbox input:checked + .checkbox-svg .unchecked
+{
+    display: none;
+}
+
+.custom-checkbox input:checked + .checkbox-svg .checked
+
+{
+    display: inline-block;
+}
+
+.container .message-container {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
     margin-top: 1rem;
 }
 
-.container .message-container textarea
-{
+.container .message-container textarea {
     font-family: KarlaNormal;
     border: 1.5px solid var(--GreyMedium);
     border-radius: 4px;
     width: 100%;
     height: 70px;
-    text-align:left;
+    text-align: left;
     padding: 0.5rem;
 }
 
-.container .button
-{
-    margin: 2rem 0rem 2rem 0rem;
+
+.container .message-container textarea:hover {
+    border: 2px solid var(--GreenMedium);
 }
 
-.container .button input
-{
-    margin-right: 8px;
-    vertical-align: middle;
-    background-color: blue;
-    margin-bottom: 3px;
-}
 
-.container .submit-btn
-{
+.container .submit-btn {
     margin-top: 1rem;
 }
 
-.container .submit-btn button
-{
+.container .submit-btn button {
     background-color: var(--GreenMedium);
     height: 40px;
     width: 100%;
     color: var(--White);
     border: 1.5px transparent;
     border-radius: 4px;
+    font-weight: var(--FontWeightBold);
 }
 
-.input-css
+.container .submit-btn button:hover
 {
+    cursor: pointer;
+}
+
+.input-css {
     text-wrap: nowrap;
     text-align: left;
     padding: 0.5rem;
     line-height: normal;
 }
+
