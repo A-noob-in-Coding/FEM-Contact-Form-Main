@@ -1,6 +1,6 @@
 /*
 TODO:
-apply the boder change property when text is written in the text box
+add the media queries
 */
 :root {
     --GreenLight: hsl(148, 38%, 91%);
@@ -32,7 +32,7 @@ apply the boder change property when text is written in the text box
 }
 
 body {
-    height: 100vh;
+    height: 110vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -143,6 +143,12 @@ body {
     vertical-align:middle;
 }
 
+.container .query-container .query .query-msg
+{
+    display: inline-block;
+    height: 100%;
+    
+}
 
 /*Hover state for the query sectipn*/
 .container .query-container .query div:hover {
@@ -263,3 +269,13 @@ body {
     line-height: normal;
 }
 
+.error
+{
+    display: none;
+    color: var(--Red);
+}
+
+.container .button .error
+{
+    padding-top: 1rem;
+}
