@@ -12,7 +12,7 @@ add the media queries
     --FontSizeLabel: 16px;
     --FontWeightLight: 400;
     --FontWeightBold: 700;
-    --InputBoxSize: 30px;
+    --InputBoxSize: 4rem;
 }
 
 @font-face {
@@ -32,7 +32,7 @@ add the media queries
 }
 
 body {
-    height: 110vh;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -41,12 +41,15 @@ body {
 }
 
 .container {
-
-    width: 55%;
-    padding: 2rem;
+    width: 45%;
+    padding: 1.5rem;
     background-color: var(--White);
     border: 1px solid var(--White);
     border-radius: 2%;
+    height: auto;
+    overflow-y: auto;
+    padding-bottom: 2rem;
+
 }
 
 .container h2 {
@@ -62,8 +65,8 @@ body {
     gap: 1rem;
 }
 
-.container .names-container .first-name,
-.container .names-container .last-name {
+.container .names-container .first-name ,
+.container .names-container .last-name  {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -95,6 +98,7 @@ body {
     border: 1.5px solid var(--GreyMedium);
     border-radius: 4px;
     height: var(--InputBoxSize);
+    
 }
 
 .container .email-container input:hover {
@@ -125,29 +129,31 @@ body {
     justify-content: flex-start;
     align-items: center;
     height: var(--InputBoxSize);
-    padding: 0rem 1rem 0rem 1rem;
+    padding: 0rem 0rem 0rem 1rem;
 }
 
 .container .query-container .query label {
     height: 100%;
     width: 100%;
     align-items: center;
-    
+    cursor: pointer;   
+    text-wrap: nowrap;
 }
 
 .container .query-container .query .svg-container {
     display: inline-block;
     height: 100%;
-    padding: none;
-    padding-top: 0.2rem;
+    padding: 0rem 1rem 0rem 0rem;
     vertical-align:middle;
 }
+.container .query-container .query .svg-container svg {
+    height: 100%;
+}
+
 
 .container .query-container .query .query-msg
 {
     display: inline-block;
-    height: 100%;
-    
 }
 
 /*Hover state for the query sectipn*/
@@ -240,6 +246,7 @@ body {
 
 .container .message-container textarea:hover {
     border: 2px solid var(--GreenMedium);
+    cursor: pointer;
 }
 
 
@@ -257,8 +264,8 @@ body {
     font-weight: var(--FontWeightBold);
 }
 
-.container .submit-btn button:hover
-{
+/* Base styles */
+.container .submit-btn button:hover {
     cursor: pointer;
 }
 
@@ -269,13 +276,108 @@ body {
     line-height: normal;
 }
 
-.error
-{
+.error {
     display: none;
     color: var(--Red);
 }
 
-.container .button .error
-{
+.container .button .error {
     padding-top: 1rem;
+}
+
+
+.success-message
+{
+    position: absolute;
+    top: 4%;
+    left: 25%;
+    width: 50%;
+    background-color: var(--GreyDarker);
+    border-radius: 8px;
+    color: var(--White);
+    padding: 1rem;
+    display: none;
+}
+.success-message .first
+{
+    text-align: center;
+    font-weight: var(--FontWeightBold);
+}
+
+.success-message .second
+{
+    text-align: center;
+    font-weight: var(--FontWeightLight);
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 768px) {
+    .container .names-container
+    {
+        flex-direction: column;
+    }
+    .container .query-container .query
+    {
+        display: flex;
+        flex-direction: column;
+    }
+    .container
+    {
+        width: 90%;
+        padding-bottom: 4rem;
+    }
+    body
+    {
+        font-size: 0.9rem;
+    }
+    .error
+    {
+        font-size: 0.6rem;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    body
+    {
+        font-size: 1rem;
+        
+    }
+    .container
+    {
+        width: 90%;
+        height: 80%;
+    }
+    .error
+    {
+        font-size: 1rem;
+    }
+    .container .submit-btn button
+    {
+        height: 4rem;
+        font-size: 2rem;
+    }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 912px) {
+    .container
+    {
+        height: 100%;
+        width: 70%;
+    }
+    body
+    {
+        font-size: 1rem;
+    }
+    .container .names-container .first-name input,
+    .container .names-container .last-name input,
+    .container .query-container .query div,
+    .container .email-container input  
+    {
+        height: 2rem;
+    }
 }
